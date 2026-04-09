@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Individual Sessions – The Mind Movement Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:      #FAF6EF;
+  --sand:       #EDE4D7;
+  --terracotta: #C17D5A;
+  --deep-tc:    #9A5F40;
+  --gold:       #C4A46A;
+  --charcoal:   #2E2C2A;
+  --mid:        #6B6460;
+  --white:      #FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--charcoal);
+  line-height:1.75;
+  overflow-x:hidden;
+}
+/* ═══════════ HEADER ═══════════ */
+#header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(250,246,239,.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(193,125,90,.18);
+  padding:0 4rem;height:76px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo-wrap{display:flex;align-items:center;gap:.75rem;}
+.logo-img{width:90px;height:68px;flex-shrink:0;display:block;}
+.logo-text strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--deep-tc);letter-spacing:.02em;}
+.logo-text span{display:block;font-size:.63rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.main-nav ul{list-style:none;display:flex;align-items:center;gap:2.2rem;}
+.main-nav a{text-decoration:none;font-size:.8rem;font-weight:400;letter-spacing:.06em;color:var(--charcoal);transition:color .2s;}
+.main-nav a:hover{color:var(--terracotta);}
+.nav-cta{background:var(--terracotta)!important;color:var(--white)!important;padding:.5rem 1.4rem;border-radius:2rem;font-weight:500!important;transition:background .2s!important;}
+.nav-cta:hover{background:var(--deep-tc)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px;}
+
+.page{
+  max-width:980px;
+  margin:0 auto;
+  padding:calc(5rem + 76px) 1.5rem 5rem;
+  display:flex;
+  flex-direction:column;
+  gap:2.5rem;
+  align-items:center;
+}
+.story-illus{
+  width:420px;
+  height:280px;
+  border-radius:16px;
+  background:var(--sand);
+  box-shadow:0 12px 30px rgba(46,44,42,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.story-illus img{width:100%;height:100%;object-fit:cover;display:block;border-radius:16px;}
+.title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+  font-weight:400;
+  margin-bottom:.6rem;
+  text-align:center;
+}
+.subtitle{
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:var(--mid);
+  margin-bottom:1.5rem;
+  text-align:center;
+}
+.story{max-width:720px;text-align:left;}
+.story p{margin-bottom:1.2rem;color:var(--mid);}
+.story-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:.6rem;}
+.btn-get-started{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:var(--terracotta);color:var(--white);
+  padding:.82rem 2rem;border-radius:3rem;text-decoration:none;
+  font-size:.84rem;font-weight:500;letter-spacing:.05em;
+  transition:all .25s;
+}
+.btn-get-started:hover{background:var(--deep-tc);transform:translateY(-2px);box-shadow:0 8px 24px rgba(193,125,90,.3);}
+.btn-know{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  margin-top:.6rem;
+  font-size:.78rem;
+  font-weight:500;
+  color:var(--terracotta);
+  text-decoration:none;
+  letter-spacing:.05em;
+  transition:gap .2s;
+}
+.btn-know:hover{gap:.7rem;}
+
+/* ═══════════ FOOTER ═══════════ */
+#footer{background:var(--charcoal);}
+.footer-top{padding:5rem;}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:5rem;}
+.fform-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--white);margin-bottom:.5rem;}
+.fform-title em{font-style:italic;color:var(--terracotta);}
+.footer-info-wrap{padding-top:1rem;}
+.footer-info-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--white);margin-bottom:1.5rem;}
+.footer-info-title em{font-style:italic;color:var(--terracotta);}
+.contact-row{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.05);border-radius:1rem;padding:1rem 1.3rem;margin-bottom:.85rem;border:1px solid rgba(255,255,255,.07);}
+.ci-box{width:38px;height:38px;background:rgba(193,125,90,.2);border-radius:.7rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cr-text strong{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.1rem;}
+.cr-text a,.cr-text span{font-size:.85rem;color:rgba(255,255,255,.65);text-decoration:none;}
+.cr-text a:hover{color:var(--gold);}
+.social-row{display:flex;gap:.8rem;margin-top:2rem;flex-wrap:wrap;}
+.soc-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);padding:.58rem 1.2rem;border-radius:2rem;text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.05em;transition:all .2s;}
+.soc-btn:hover{background:var(--terracotta);border-color:var(--terracotta);color:var(--white);}
+.footer-follow{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:2rem;line-height:1.6;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.8rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-links{display:flex;gap:1.8rem;flex-wrap:wrap;}
+.footer-links a{font-size:.74rem;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);}
+
+@media(max-width:720px){
+  .page{grid-template-columns:1fr;gap:1.5rem;}
+  .story-illus{width:340px;height:226px;}
+}
+@media(max-width:960px){
+  #header{padding:0 1.5rem;}
+  .main-nav ul{display:none;}
+  .hamburger{display:flex;}
+  .main-nav.open ul{display:flex;flex-direction:column;align-items:flex-start;position:fixed;top:76px;left:0;right:0;background:rgba(250,246,239,.98);padding:2rem 1.5rem;gap:1.4rem;border-bottom:1px solid var(--sand);}
+  .footer-top{padding:5rem 1.5rem;}
+  .footer-bottom{padding:1.5rem!important;flex-direction:column;align-items:center;text-align:center;}
+}
+</style>
+</head>
+<body>
+  <header id="header">
+    <div class="logo-wrap">
+      <img src="logo.png" alt="The Mind Movement Space" class="logo-img" loading="lazy" />
+      <div class="logo-text">
+        <strong>The Mind Movement Space</strong>
+        <span>Mind &nbsp;·&nbsp; Movement &nbsp;·&nbsp; Exercise</span>
+      </div>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="website.html#intro">Home</a></li>
+        <li><a href="website.html#about">About</a></li>
+        <li><a href="website.html#services">Services</a></li>
+        <li><a href="website.html#experience">Experience</a></li>
+        <li><a href="#footer" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger" onclick="document.getElementById('mainNav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="story-illus" aria-hidden="true">
+      <img src="one-to-one.png" alt="" loading="lazy" />
+    </div>
+    <section class="story">
+      <div class="subtitle">Individual Sessions</div>
+      <h1 class="title">Individual Sessions</h1>
+      <p>Individual sessions are tailored to the needs of the individual, whether the focus is on working towards performance goals, navigating challenges, or building a more consistent relationship with movement. The process begins with developing an understanding of the individual's context and goals, followed by identifying key areas of focus and creating practical, personalized strategies.</p>
+      <p>The work is collaborative and evolves over time, supporting both performance and overall well-being. Areas of focus may include confidence, focus, emotional regulation, managing pressure, motivation, and returning from injury. Sessions can be conducted on a regular basis and are adapted based on individual progress and requirements.</p>
+      <div class="story-actions">
+        <a href="#footer" class="btn-get-started">Contact Us</a>
+        <a href="website.html#services" class="btn-know">Back to Services <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-grid">
+        <div class="footer-info-wrap">
+          <h3 class="fform-title">Contact Details</h3>
+          <div class="footer-info-title">The Mind <em>Movement</em> Space</div>
+          <div class="contact-row">
+            <div class="ci-box"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M1.5 3h14a1 1 0 011 1v9a1 1 0 01-1 1h-14a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#C17D5A" stroke-width="1.4"/><path d="M1 4l7.5 5.5L16 4" stroke="#C17D5A" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+            <div class="cr-text"><strong>Email</strong><a href="mailto:sakshipjhaveri@gmail.com">sakshipjhaveri@gmail.com</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="ci-box"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3 2h3.5l2 4-2 1.5A9.5 9.5 0 009.5 13L11 11l4 2v3.5c0 .8-.7 1.5-1.5 1.5A14 14 0 011.5 2C1.5 1.2 2.2.5 3 .5z" stroke="#C17D5A" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+            <div class="cr-text"><strong>Phone</strong><a href="tel:+917600640995">+91 76006 40995</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="ci-box"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 2.2a6.3 6.3 0 00-5.4 9.7L2 15l3.3-1.1a6.3 6.3 0 003.2.9 6.3 6.3 0 000-12.6z" stroke="#C17D5A" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.2 6.4c.3-.3.7-.3 1 0l.8.8c.3.3.3.7 0 1l-.3.3a3.1 3.1 0 002.2 2.2l.3-.3c.3-.3.7-.3 1 0l.8.8c.3.3.3.7 0 1l-.4.4c-.4.4-1 .6-1.6.5-2.4-.4-4.6-2.5-5-5-.1-.6.1-1.2.5-1.6l.4-.4z" stroke="#C17D5A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="cr-text"><strong>WhatsApp</strong><a href="https://wa.me/917600640995?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20the%20services" target="_blank" rel="noopener">Message on WhatsApp</a></div>
+          </div>
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/sakshi-jhaveri" class="soc-btn" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M10 2H7.5A3 3 0 004.5 5v2H3v2.5h1.5V13H7v-3.5H9.5L10 7H7V5a.5.5 0 01.5-.5H10V2z" fill="currentColor"/></svg>LinkedIn</a>
+            <a href="https://www.instagram.com/themindmovementspace" class="soc-btn" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1.5" width="11" height="11" rx="3" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="10.2" cy="3.8" r=".8" fill="currentColor"/></svg>Instagram</a>
+          </div>
+          <p class="footer-follow">Stay connected for insights on sport, movement, and psychological well-being.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="website.html#intro">Home</a><a href="website.html#about">About</a><a href="website.html#services">Services</a>
+        <a href="website.html#experience">Experience</a><a href="#footer">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 The Mind Movement Space &nbsp;·&nbsp; Sakshi Jhaveri – Sport &amp; Exercise Psychologist</div>
+    </div>
+  </footer>
+</body>
+</html>
